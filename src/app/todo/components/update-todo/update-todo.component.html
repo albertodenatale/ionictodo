@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-toolbar>
+          <ion-title color="success">
+            Update Todo
+          </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <form>
+      <ion-item>
+        <ion-label position="stacked">Content</ion-label>
+        <ion-textarea required type="textarea" [(ngModel)]="todo.content" name="content" placeholder="Enter Some Awesome Content">
+  
+        </ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Date</ion-label>
+        <ion-input required type="date" [ngModel] ="todo.when | date:'yyyy-MM-dd'" (ngModelChange)="todo.when = $event" name="when">
+  
+        </ion-input>
+      </ion-item>
+    </form>
+  </ion-content>
+  
+  <ion-footer>
+    <ion-toolbar text-center>
+      <ion-button [routerLink]="['/']">Back</ion-button>
+      <ion-button (click)="submit()">Confirm</ion-button>
+    </ion-toolbar>
+  </ion-footer>
